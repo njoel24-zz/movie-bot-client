@@ -1,7 +1,7 @@
 const recastai = require('recastai');
 const request = require('request');
 const recastAIRequestToken = "efa320826368b2c3b53bc418beed2f4a"; 
-const httpProxy = "http://localhost:5000/";
+const httpProxy = "http://localhost:5001/";
 const locale = 'en';
 const client = new recastai.request(recastAIRequestToken, locale);
 
@@ -26,7 +26,7 @@ function onStdinInput(inputText) {
 
 function onRecastAIReply(aiResponse) {
 	const intent = aiResponse.intent();
-	//console.log(JSON.stringify(aiResponse));
+	console.log(JSON.stringify(aiResponse));
 
 	if (!intent) {
 		console.log("I did not get your intent...please retry");
